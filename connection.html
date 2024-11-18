@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <main>
+        <nav>
+            <ul>
+                 <li><a href="index.html"><span>Accueil</span></a></li>
+                <li><a href="inscription.html"><span>S'inscrire</span></a></li>
+                <li><a href="connection.html"><span>Se connecter</span></a></li>
+                <li><a href="profil.html"><span>Profil</span></a></li>
+                <li><a href="play.html"><span>Jouer</span></a></li>
+            </ul>          
+        </nav>
+    </main>
+    <!-- <fieldset>
+        <legend> -->
+        <div class ="formconnection">
+            <!-- Formulaire nom d'utilisateur -->
+        <form formulaire="form compte" action=""method="get">
+            <!-- Voir pour récupérer le nom d'utilisateur dans le local storage en js -->
+            <label for ="nom"> Nom d'utilisateur*:</label>
+            <input type="text" id="nom" name="nom" autofocus required placeholder="Nom d'utilisateur" pattern="[A-Za-z]{3,}"
+            title="Saisissez votre nom (3 caractères min)">
+            <!-- Formulaire mail -->
+            <div class="form-label">
+                <label for="fld-email">Email : </label>
+            </div>
+            <div class="form-field">
+                <input id="fld-email" pattern=".+@example\.com" size="30" class="fld-field" required="required" placeholder="Votre email ?"/>
+            </div>
+            </div>
+            <!-- Formulaire mot de passe et confirmation -->
+            <div class="form-line">
+                <div class="form-label">
+                    <label for="fld-password">Mot de passe : </label>
+                </div>
+                <div class="form-field">
+                    <input id="fld-password" type="password" class="fld-field" required="required" />
+                </div>
+            </div>
+            <div id="bouton">
+                <input type="reset" name="btAnnuler" value="Annuler" class="boutonForm" title="Annuler" />
+                <input type="submit" name="btValider" value="Valider" class="boutonForm" title="Valider"/>
+            </div>
+        </div>
+    
+</body>
+</html> 
+
