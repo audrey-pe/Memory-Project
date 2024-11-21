@@ -2,10 +2,12 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profil</title>
     <link rel="stylesheet" href="style.css"/>
     <script src = "script.js"></script> 
+    <script src = "connect.js"></script>
 </head>
 <body>
     <main>
@@ -18,27 +20,25 @@
                 <li><a href="play.html"><span>Jouer</span></a></li>
             </ul>          
         </nav>
+
+        <label for="gridChoice">Choisir la grille</label>
+        <select name="choix" id="gridChoice">
+            <option value="">Choix de la grille</option>
+            <option value="alphabet-scrabble">Alphabet - scrabble</option>
+            <option value="animaux">Animaux</option>
+            <option value="animauxAnimes">Animaux animés</option>
+            <option value="animauxdomestiques">Animaux domestiques</option>
+            <option value="chiens">Chiens</option>
+            <option value="dinosaures">Dinosaures</option>
+            <option value="dinosauresAvecNom">Dinosaures avec nom</option>
+            <option value="memory-legume">Légumes</option>
+        </select>
         <label for="gridLenght">Choisir la taille</label>
         <select name="lenght" id="gridLenght">
             <option value="">Choix de la taille</option>
             <option value="4*3">4*3</option>
             <option value="none">definir</option>
         </select>
-        <div class="rappel">
-        <p>Pour réaliser une nouvelle partie, appuyer sur la barre espace. (règles du jeu dans le menu accueil)</p>
-        </div>
-        <img src="./ressources/face_cachee.jpg" id="carte0" onclick="retourner(0)">
-        <img src="./ressources/face_cachee.jpg" id="carte1" onclick="retourner(1)">
-        <img src="./ressources/face_cachee.jpg" id="carte2" onclick="retourner(2)">
-        <img src="./ressources/face_cachee.jpg" id="carte3" onclick="retourner(3)">
-        <br>
-        <img src="./ressources/face_cachee.jpg" id="carte4" onclick="retourner(4)">
-        <img src="./ressources/face_cachee.jpg" id="carte5" onclick="retourner(5)">
-        <img src="./ressources/face_cachee.jpg" id="carte6" onclick="retourner(6)">
-        <img src="./ressources/face_cachee.jpg" id="carte7" onclick="retourner(7)">
     </main>
-    <footer>  
-        <button id="btnPlay" class ="btnPlay">Recommencer</button>
-    </footer>
 </body>
 </html>

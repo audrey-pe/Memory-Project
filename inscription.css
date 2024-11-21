@@ -1,0 +1,44 @@
+ /* Formulaire connection et inscription */
+
+ fieldset{
+    color : whitesmoke;
+    margin-top: 3%;
+    
+ }
+  /* barre securité mdp */
+  .password-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+#password {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+#strength-bar {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #ddd;
+    margin-top: 10px;
+    transition: width 0.3s ease;
+}
+.weak {
+    background-color: #ff4d4d; /* Rouge */
+    width: 33%;
+}
+.medium {
+    background-color: #ffcc00; /* Jaune */
+    width: 66%;
+}
+.strong {
+    background-color: #4dff4d; /* Vert */
+    width: 100%;
+}
+#strength-text {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+}

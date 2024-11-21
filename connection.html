@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connection</title>
     <link rel="stylesheet" href="style.css"/>
+    <script src = "script.js"></script> 
+    <script src = "connect.js"></script>
 </head>
 <body>
     <main>
@@ -17,39 +19,35 @@
                 <li><a href="play.html"><span>Jouer</span></a></li>
             </ul>          
         </nav>
-    </main>
-    <!-- <fieldset>
-        <legend> -->
-        <div class ="formconnection">
-            <!-- Formulaire nom d'utilisateur -->
-        <form formulaire="form compte" action=""method="get">
-            <!-- Voir pour récupérer le nom d'utilisateur dans le local storage en js -->
-            <label for ="nom"> Nom d'utilisateur*:</label>
-            <input type="text" id="nom" name="nom" autofocus required placeholder="Nom d'utilisateur" pattern="[A-Za-z]{3,}"
-            title="Saisissez votre nom (3 caractères min)">
-            <!-- Formulaire mail -->
-            <div class="form-label">
-                <label for="fld-email">Email : </label>
-            </div>
-            <div class="form-field">
-                <input id="fld-email" pattern=".+@example\.com" size="30" class="fld-field" required="required" placeholder="Votre email ?"/>
-            </div>
-            </div>
-            <!-- Formulaire mot de passe et confirmation -->
-            <div class="form-line">
+        <fieldset>
+            <legend>Connexion</legend>
+            <form id="submit" action="connection.html"></form>
+            <div class ="form-connection">
+                <!-- Formulaire nom d'utilisateur -->
+                <form formulaire="form-compte" action=""method="get">
+                <!-- Voir pour récupérer le nom d'utilisateur dans le local storage en js -->
+                <label for ="nom"> Nom d'utilisateur*:</label>
+                <input type="text" id="nom" name="nom" autofocus required placeholder="Nom d'utilisateur" pattern="[A-Za-z]{3,}"
+                title="Saisissez votre nom (3 caractères min)">
+                <!-- Formulaire mail -->
                 <div class="form-label">
-                    <label for="fld-password">Mot de passe : </label>
+                    <label for="email">Email*: </label>
+                    <input id="email" type="text" autocomplete ="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}"  class="fld-field" required placeholder="Votre email ?"/>
                 </div>
-                <div class="form-field">
-                    <input id="fld-password" type="password" class="fld-field" required="required" />
+                <!-- Formulaire mot de passe et confirmation -->
+                <div class="form-line">
+                    <div class="password">
+                        <label for="password">Mot de passe*: </label>
+                        <input id="password" type="password" class="fld-field" required placeholder="Votre mot de passe ?" />
+                    </div>
+                </div>
+                <div id="bouton">
+                    <input type="reset" name="btAnnuler" value="Annuler" class="boutonForm" title="Annuler" />
+                    <input type="submit" name="btValider" value="Se connecter" class="boutonForm" title="Valider"/>
                 </div>
             </div>
-            <div id="bouton">
-                <input type="reset" name="btAnnuler" value="Annuler" class="boutonForm" title="Annuler" />
-                <input type="submit" name="btValider" value="Valider" class="boutonForm" title="Valider"/>
-            </div>
-        </div>
-    
+        </fieldset>
+    </main>
 </body>
 </html> 
 
