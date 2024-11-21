@@ -11,23 +11,18 @@ window.addEventListener('keydown', function(event) {
   }
 })
 
-// Tableau initialisation
-// Liste d'images pour le jeu
-// const images = [
-//   "ressources/memory-legume/1.svg",
-//   "ressources/memory-legume/2.svg",
-//   "ressources/memory-legume/3.svg",
-//   "ressources/memory-legume/4.svg",
-//   "ressources/memory-legume/5.svg",
-//   "ressources/memory-legume/6.svg",
-// ];
-
+// initialisation du jeu
 let tableau = document.getElementById("tableau");
 let nbCartes = 8;
+let nbCartesRetournees = 0;
+let nbCartesGagnees = 0;
+let carteA = -1;
+let carteB = -1;
 let cartes = [];
 let carteRetournee = []; // Contient les cartes actuellement retournées
 let countTrue = 0; // Nombre de paires trouvées
 let gameOver = false; // Vérifie si le jeu est terminé
+let canClick = false;
 
 // Mélanger les cartes
 function shuffle() {
@@ -62,73 +57,53 @@ function afficherToutesLesCartes() {
 }
 
 function retourner(idCarte) {
-  console.log("la carte " + idCarte + " a ete cliqueee")
+  if (!canClick) {
+    return;
+  }
+  let numeroFichier = cartes[idCarte] + 1
+  let filename = "./ressources/animauxdomestiques/" + numeroFichier + ".jpg"
+  document.getElementById("carte" + idCarte).src = filename
+
+  nbCartesRetournees += 1;
+  if (nbCartesRetournees == 1) {
+    carteA = idCarte
+  } else {
+    carteB = idCarte
+  }
+  
+  if (nbCartesRetournees == 2) {
+    if (comparerCartes(carteA, carteB)) {
+      nbCartesGagnees += 2;
+      if (nbCartesGagnees >= nbCartes) {
+        alert("BRAVO");
+      }
+    } else {
+      canClick = false;
+      setTimeout(() => {
+        cacherCartes(carteA, carteB);
+        canClick = true;
+      }, 2000, carteA, carteB)
+    }
+    nbCartesRetournees = 0;
+  }
+}
+
+function cacherCartes(carte1, carte2) {
+  console.log("cacher les cartes")
+  document.getElementById("carte" + carte1).src = "./ressources/face_cachee.jpg"
+  document.getElementById("carte" + carte2).src = "./ressources/face_cachee.jpg"
+}
+
+function comparerCartes(carte1, carte2) {
+  if (cartes[carte1] == cartes[carte2]) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // Créer les cartes
 function creerCartes() {
   shuffle(); // Mélanger les images
-  afficherToutesLesCartes()
-
+  canClick = true;
 }
-
-// // Retourner une carte
-// function retournerCarte(event) {
-//   if (gameOver || event.target.classList.contains("retournee") || carteRetournee.length === 2) {
-//       return; // Si le jeu est terminé ou si la carte est déjà retournée, ne rien faire
-//   }
-
-//   // Vérifier si 2 cartes sont retournées
-//   if (carteRetournee.length === 2) {
-//       setTimeout(comparerCartes, 1000); // Attendre 1 seconde avant de comparer les cartes
-//   }
-// }
-
-// // Comparer les cartes retournées
-// function comparerCartes() {
-//   const [carte1, carte2] = carteRetournee;
-
-//   if (carte1.dataset.index === carte2.dataset.index) {
-//       countTrue++;
-//       if (countTrue === images.length) {
-//           setTimeout(finJeu, 500); // Si toutes les paires sont trouvées, fin du jeu
-//       }
-//   } else {
-      
-//   }
-
-//   carteRetournee = []; // Réinitialiser les cartes retournées
-// }
-
-// Fin du jeu
-// function finJeu() {
-//   gameOver = true;
-//   alert("Félicitations ! Vous avez trouvé toutes les paires.");
-// }
-
-// Recommencer le jeu
-// document.getElementById("btnRecommencer").addEventListener("click", nouvellePartie());
-
-
-
-
-
-// let tab=[8];
-// let img = document.getElementById("1");
-// for(i=0; i=tab.length; i++){
-//   tab.push("img"+1);
-// }
-// //fonctionnement des comparaisons
-// let doub = tab; //math.random?
-// // function callback;
-// document.getElementById('btn').addEventListener('click',foobar)
-// let clic1=(ecoute);
-// let clic2=(ecoute);
-// let countTrue=0;
-// while (countTrue!==4){
-//   if (clic>2){
-//     if (img1 != img2){
-//     // retourner les cartes au bout de 5 secondes-> setTimeout
-//     }else(countTrue +=1); 
-//   }else;
-// }
