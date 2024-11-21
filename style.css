@@ -73,21 +73,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="rep
     border-radius: 4px;
     padding: 10px 20px;
 }
-.btnPlay{
-    position: fixed;   /* Fixe le bouton à un endroit spécifique de la fenêtre */
-    bottom: 40px;      /* Décale le bouton à 20 pixels du bas de la page */
-    right: 40px;       /* Décale le bouton à 20 pixels du côté droit de la page */
-    padding: 10px 20px; /* Optionnel : pour ajouter de l'espace autour du texte du bouton */
-    background-color: #3f2e8e; /* Optionnel : couleur de fond */
-    color: white;         /* Optionnel : couleur du texte */
-    border: none;         /* Optionnel : enlever les bordures */
-    border-radius: 5px;   /* Optionnel : arrondir les coins */
-    font-size: 16px;  
-    padding: 12px 30px;               /* Espacement autour du texte du bouton */
-    font-size: 16px;                  /* Taille de la police */
-    font-weight: bold;                /* Texte en gras */
-    cursor: pointer;                 /* Changer le curseur au survol */
-}
+
 .rappel{
     margin-top: 2%;
     margin-bottom: 3%;
@@ -95,8 +81,25 @@ input[type="text"], input[type="email"], input[type="password"], input[type="rep
     align-items: center;
     color: rgb(67, 61, 61);
 }
+select{
+    background-color: whitesmoke;    
+    transform: translateY(-2px);
+    border-radius: 5px; 
+}
 
+.gridChoice{
+    margin-top: 3%;
+}
 
+.jeu{
+    border-radius: 7px;   
+    width: auto;           /* Largeur du cadre */
+    height: auto;          /* Hauteur du cadre */
+    margin: 20px auto;      /* Centrer le cadre sur la page */
+    padding: 20px;          /* Espacement intérieur */
+    background-color: #e8b9b9; /* Couleur de fond */
+    border: 5px solid #333; /* Bordure autour du cadre */
+    border-radius: 15px;    /* Coins arrondis */
 
-
+}
 
